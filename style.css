@@ -1,0 +1,253 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffd700; /* Bright yellow as in the image */
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll due to image positioning */
+}
+
+/* Top Bar (simulating the header section from the previous image) */
+.top-bar {
+    background-color: transparent; /* No specific background, just for user info */
+    padding: 5px 20px;
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+    position: absolute; /* Position relative to the body */
+    top: 0;
+    right: 0;
+    width: auto;
+    z-index: 10; /* Ensure it's on top */
+}
+
+.user-info {
+    font-size: 14px;
+    color: #333; /* Darker text for visibility on yellow */
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background for the user info box */
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.codemith {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.star {
+    color: orange;
+}
+
+/* Header Styles (INFOMAX COMPUTER ACADEMY) */
+header {
+    text-align: center;
+    padding: 40px 20px 20px; /* Adjust padding as needed */
+    color: #8b0000; /* Dark red/maroon color */
+}
+
+header h1 {
+    font-family: 'Times New Roman', serif; /* Use a serif font similar to the image */
+    font-size: 4em; /* Larger size for INFOMAX */
+    margin-bottom: -10px; /* Pull closer to the subtitle */
+    letter-spacing: 2px;
+}
+
+header h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.8em; /* Size for COMPUTER ACADEMY */
+    margin-top: 0;
+    letter-spacing: 1px;
+}
+
+/* Horizontal rule/line below the header */
+header::after {
+    content: '';
+    display: block;
+    width: 60%; /* Adjust width of the line */
+    height: 3px;
+    background-color: #8b0000; /* Dark red/maroon color */
+    margin: 20px auto 0;
+    border-radius: 5px;
+}
+
+
+/* Navigation Bar */
+nav {
+    background-color: #8b0000; /* Dark red/maroon background for nav */
+    padding: 10px 0;
+    text-align: left; /* Aligns list items to the left */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+    margin-bottom: 20px; /* Space below nav */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px; /* Margin from the left */
+    display: flex; /* Use flexbox for horizontal items */
+    justify-content: flex-start; /* Align items to the start */
+    gap: 30px; /* Space between list items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 0; /* Add some padding for clickable area */
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Lighter yellow on hover */
+}
+
+/* Main Content Area */
+.content-area {
+    display: flex;
+    justify-content: center; /* Center the content and image */
+    align-items: flex-start; /* Align items to the top */
+    padding: 0 40px; /* Padding on sides */
+    position: relative; /* For positioning the image */
+}
+
+.text-content {
+    flex: 2; /* Takes up more space than the image */
+    max-width: 65%; /* Control maximum width */
+    padding-right: 40px; /* Space between text and image */
+}
+
+.text-content section {
+    margin-bottom: 25px;
+}
+
+.text-content h3 {
+    font-family: 'Georgia', serif; /* A serif font for headings */
+    font-size: 1.8em;
+    color: #333; /* Darker text for readability */
+    margin-bottom: 10px;
+    border-bottom: 1px solid #999; /* Subtle underline */
+    padding-bottom: 5px;
+}
+
+.text-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333; /* Darker text for readability */
+}
+
+.enrollment-info {
+    margin-top: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.enrollment-info a {
+    color: #8b0000; /* Red link color */
+    text-decoration: underline;
+}
+
+/* Image Container */
+.image-container {
+    flex: 1; /* Takes up less space than the text */
+    max-width: 17%; /* Control maximum width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Absolute positioning to match image placement */
+    right: 20px; /* Adjust right margin as needed */
+    top: 50px; /* Adjust top margin to align with text content */
+    z-index: 1; /* Ensure it's above background elements */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 3.5em;
+    }
+
+    header h2 {
+        font-size: 1.5em;
+    }
+
+    .content-area {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center; /* Center items when stacked */
+        padding: 0 20px;
+    }
+
+    .text-content {
+        max-width: 90%; /* Allow text to take more width */
+        padding-right: 0;
+        margin-bottom: 30px; /* Space between text and image when stacked */
+    }
+
+    .image-container {
+        position: static; /* Remove absolute positioning when stacked */
+        max-width: 60%; /* Adjust image size for smaller screens */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 20px;
+    }
+
+    .text-content h3 {
+        font-size: 1.5em;
+    }
+
+    .text-content p {
+        font-size: 1em;
+    }
+
+    .enrollment-info {
+        font-size: 1em;
+    }
+
+    .image-container {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header h2 {
+        font-size: 1em;
+    }
+
+    .top-bar {
+        font-size: 12px;
+    }
+
+    .content-area {
+        padding: 0 15px;
+    }
+}
